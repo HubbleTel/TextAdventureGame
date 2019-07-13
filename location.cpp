@@ -107,13 +107,19 @@ bool location::useObject(item* itemName)
 		return false;
 	}
 }
-
+/*Implementation of the addplayer function.
+This function allows the addition of a new player called alien.
+*/
 void location::addplayer(string alienName)
 {
 	alien = new player(alienName);
 	
 }
 
+/*Implementation of the showPlayer function of the location class.
+This function tells the player if there is an alien in the location.
+If there is an alien then the alien will attack.
+*/
 void location::showPlayer()
 {
 	if (alien) {
@@ -129,6 +135,9 @@ void location::removeObject(item* myItem) {
 	objectlist.remove(myItem);
 }
 
+/*Implementation of the checkAlien function.
+Boolean to check if alien or not, returns true or false.
+*/
 bool location::checkAlien() {
 	if (alien) {
 		return true;
@@ -138,6 +147,9 @@ bool location::checkAlien() {
 	}
 }
 
+/*Implementation of the attackAlien function.
+This function allows to attack the alien at locations.
+*/
 bool location::attackAlien(int attackPoints) 
 {
 	bool ret = false;
@@ -157,6 +169,9 @@ bool location::attackAlien(int attackPoints)
 	return ret;
 }
 
+/*Implementation of the attackPlayer function.
+This function allows the alien to attack the player default damage is set to 30.
+*/
 void location::attackPlayer() {
 	if (me) 
 	{

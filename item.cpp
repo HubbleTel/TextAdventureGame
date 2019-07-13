@@ -55,13 +55,16 @@ Returns the name of the item.*/
 string item::getName() {
 	return name;
 }
+
 /*Implementation of the getDeets function of item class.
 Returns the detailed description of the item.*/
 string item::getDeets()
 {
 	return deets;
 }
-
+/*Implementation of the Usability function of item class.
+Used to check if an item is usable at a particular class.
+*/
 void item::usability(location * loc)
 {   
 	if (loc) {
@@ -69,10 +72,15 @@ void item::usability(location * loc)
 	}
 }
 
+/*Implementation of the isVisible function of item class.
+Used to check item is visible at the start of the location.
+*/
 bool item::isVisible() {
 	return visibility;
 }
-
+/*Implementation of the setVisibility function of item class.
+Default visibility is set to visible.
+*/
 void item::setVisibility(bool visible) {
 	visibility = visible;
 }

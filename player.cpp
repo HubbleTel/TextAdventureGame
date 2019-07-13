@@ -16,6 +16,9 @@ using namespace std;
 /*This player.cpp file contains the implementation of the player class declared in player.h
 */
 
+/*The Implementation of the player constructor
+This is the default player class.
+*/
 player::player()
 {
 }
@@ -43,6 +46,9 @@ player::player(location* playerLocation)
 	puzzle  = true;
 }
 
+/*Implementation of the getName function.
+Returns the name of the player.
+*/
 string player::getName()
 {
 	return name;
@@ -388,6 +394,9 @@ void player::look() {
 	}
 }
 
+/*Implementation of the checkPuzzle function of the player class.
+checkPuzzle is used to check if the puzzle has been solved or not.
+*/
 void player::checkPuzzle(){
 	std::string line;
 	int count = 0;
@@ -414,6 +423,9 @@ void player::checkPuzzle(){
 		
 }
 
+/*Implementation of the fight function of the player class.
+Allows the player to fight.
+*/
 bool player::fight()
 {
 	bool ret = false;
@@ -433,6 +445,9 @@ bool player::fight()
 	return ret;
 }
 
+/*Implementation of the decreaseHealth function of the player class.
+The decreaseHealth function allows hp to be reduced.
+*/
 void player::decreaseHealth(int attackPoints) {
 	healthPoints = healthPoints - attackPoints;
 	if (healthPoints <= 0) 
@@ -450,12 +465,17 @@ void player::decreaseHealth(int attackPoints) {
 	}
 }
 
+/*Implementation of the isPlayerAlive function.
+Tells if player is alive or dead.
+*/
 bool player::isPlayerAlive()
 { 
 	return life;
 }
 
-
+/*Implementation of the moveToFinalLoc function
+This function helps to make the logic of the final boss battle.
+*/
 bool player::moveToFinalLoc()
 {
 	
